@@ -86,92 +86,28 @@
 			path = VIPERDemo;
 			sourceTree = "<group>";
 		};
-		5E62017727B58A2800EF6CEA /* Presentor */ = {
-			isa = PBXGroup;
-			children = (
-				5E62017B27B58C2A00EF6CEA /* GreetingPresenter.swift */,
-			);
-			path = Presentor;
-			sourceTree = "<group>";
-		};
-		5E62017927B58A5100EF6CEA /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				5E62017F27B59C1A00EF6CEA /* GreetingRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		5E62018127B5A1D200EF6CEA /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
-				5E62019027B5AF3900EF6CEA /* Service */,
-				5E62018727B5A5DD00EF6CEA /* Entity */,
-				5E62018627B5A5D700EF6CEA /* Interactor */,
-				5E62018527B5A5D000EF6CEA /* Presenter */,
-				5E62018227B5A1EF00EF6CEA /* View */,
+				5E62019127B5AF4800EF6CEA /* LoginService.swift */,
+				5E62018E27B5AE1300EF6CEA /* User.swift */,
+				5E62018C27B5AB2900EF6CEA /* LoginInteractor.swift */,
+				5E62018827B5A93000EF6CEA /* LoginPresenter.swift */,
+				5E62018327B5A20100EF6CEA /* LoginViewController.swift */,
 				5E62018A27B5A9AE00EF6CEA /* LoginAssembly.swift */,
 			);
 			path = LoginModule;
 			sourceTree = "<group>";
 		};
-		5E62018227B5A1EF00EF6CEA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5E62018327B5A20100EF6CEA /* LoginViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5E62018527B5A5D000EF6CEA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				5E62018827B5A93000EF6CEA /* LoginPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		5E62018627B5A5D700EF6CEA /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				5E62018C27B5AB2900EF6CEA /* LoginInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		5E62018727B5A5DD00EF6CEA /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				5E62018E27B5AE1300EF6CEA /* User.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		5E62019027B5AF3900EF6CEA /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				5E62019127B5AF4800EF6CEA /* LoginService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		5E62FD0427B5861500EF6CEA /* GreetingModule */ = {
 			isa = PBXGroup;
 			children = (
-				5E62FD0527B5879900EF6CEA /* View */,
-				5E62017727B58A2800EF6CEA /* Presentor */,
-				5E62017927B58A5100EF6CEA /* Router */,
+				5E55A5AA27B2C2D9008F2421 /* GreetingViewController.swift */,
+				5E62017B27B58C2A00EF6CEA /* GreetingPresenter.swift */,
+				5E62017F27B59C1A00EF6CEA /* GreetingRouter.swift */,
 				5E62017D27B5967400EF6CEA /* GreetingAssembly.swift */,
 			);
 			path = GreetingModule;
-			sourceTree = "<group>";
-		};
-		5E62FD0527B5879900EF6CEA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5E55A5AA27B2C2D9008F2421 /* GreetingViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
