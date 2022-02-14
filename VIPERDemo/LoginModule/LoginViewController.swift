@@ -8,12 +8,11 @@
 import UIKit
 
 protocol LoginViewInput {
-    var output: LoginViewOutput? { get set }
     func setResultOfLoginToLabel(result: Bool)
 }
 
 protocol LoginViewOutput {
-    func loginWithCredentional(login: String, password: String)
+    func loginWithCredentional(login: String?, password: String?)
 }
 
 class LoginViewController: UIViewController, LoginViewInput {
@@ -25,7 +24,7 @@ class LoginViewController: UIViewController, LoginViewInput {
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        output?.loginWithCredentional(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        output?.loginWithCredentional(login: loginTextField.text, password: passwordTextField.text)
     }
     
     func setResultOfLoginToLabel(result: Bool) {

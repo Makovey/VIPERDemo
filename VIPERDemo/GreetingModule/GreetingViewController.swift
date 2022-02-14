@@ -8,13 +8,11 @@
 import UIKit
 
 protocol GreetingViewInput {
-    var output: GreetingViewOutput? { get set }
     
 }
 
-protocol GreetingViewOutput {
+protocol GreetingViewOutput: AnyObject {
     func didButtonTapped()
-    
 }
 
 class GreetingViewController: UIViewController, GreetingViewInput {
@@ -25,4 +23,3 @@ class GreetingViewController: UIViewController, GreetingViewInput {
     }
     
 }
-

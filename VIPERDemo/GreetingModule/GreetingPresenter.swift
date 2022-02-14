@@ -10,9 +10,13 @@ import Foundation
 class GreetingPresenter {
     
     private let router: GreetingRouterInput
+    private let interactor: GreetingInteractorInput
+    private let view: GreetingViewInput
     
-    init(router: GreetingRouterInput) {
+    init(router: GreetingRouterInput, interactor: GreetingInteractorInput, view: GreetingViewInput) {
         self.router = router
+        self.interactor = interactor
+        self.view = view
     }
     
 }
@@ -22,5 +26,9 @@ extension GreetingPresenter: GreetingViewOutput {
     func didButtonTapped() {
         router.openLoginScreen()
     }
+    
+}
+
+extension GreetingPresenter: GreetingInteractorOutput {
     
 }

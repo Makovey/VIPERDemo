@@ -11,8 +11,11 @@ import UIKit
 class LoginAssembly {
     static func createLoginScreen() -> UIViewController {
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as! LoginViewController
-        let interactor = LoginInteractor()
-        let presenter = LoginPresenter(interactor: interactor, view: view)
+        let router = LoginRouter()
+        
+        let loginService = LoginService()
+        let interactor = LoginInteractor(loginService: loginService)
+        let presenter = LoginPresenter(router: router, interactor: interactor, view: view)
         
         interactor.output = presenter
         view.output = presenter

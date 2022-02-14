@@ -8,23 +8,26 @@
 import Foundation
 
 protocol LoginInteractorInput {
-    var output: LoginInteractorOutput? { get set }
     func loginAccount(withLogin: String, password: String)
 }
 
 protocol LoginInteractorOutput: AnyObject {
-    func isCredentionalsCorrect(isLogged: Bool)
+    func checkCredentionals(isLogged: Bool)
 }
 
 class LoginInteractor: LoginInteractorInput {
     weak var output: LoginInteractorOutput?
     
+    private let loginService: LoginServiceProtocol
+    
+    init(loginService: LoginServiceProtocol) {
+        self.loginService = loginService
+    }
+    
     func loginAccount(withLogin login: String, password: String) {
         let user = User(login: login, password: password)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-            let loggingResult = LoginService.isUserLogging(user: user)
-            self?.output?.isCredentionalsCorrect(isLogged: loggingResult)
-        }
+        let loggingResult = loginService.isUserLogging(user: user)
+        output?.checkCredentionals(isLogged: loggingResult)
     }
 }

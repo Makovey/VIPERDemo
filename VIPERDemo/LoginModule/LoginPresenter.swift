@@ -8,24 +8,27 @@
 import Foundation
 
 class LoginPresenter {
-    private let interactor: LoginInteractorInput
-    private let view: LoginViewInput
     
-    init(interactor: LoginInteractorInput, view: LoginViewInput) {
+    private let router: LoginRouterInput
+    private let interactor: LoginInteractorInput
+    private let view: LoginViewInput // weak
+    
+    init(router: LoginRouterInput, interactor: LoginInteractorInput, view: LoginViewInput) {
+        self.router = router
         self.interactor = interactor
         self.view = view
     }
 }
 
 extension LoginPresenter: LoginViewOutput {
-    func loginWithCredentional(login: String, password: String) {
-        interactor.loginAccount(withLogin: login, password: password)
+    func loginWithCredentional(login: String?, password: String?) {
+        interactor.loginAccount(withLogin: login ?? "", password: password ?? "")
     }
     
 }
 
 extension LoginPresenter: LoginInteractorOutput {
-    func isCredentionalsCorrect(isLogged: Bool) {
+    func checkCredentionals(isLogged: Bool) {
         view.setResultOfLoginToLabel(result: isLogged)
     }
 }
